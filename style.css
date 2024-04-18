@@ -1,0 +1,165 @@
+@font-face {
+    font-family: coop;
+    src: url("assets/fonts/coop.otf");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: unelegant;
+    src: url("assets/fonts/Unilegant.otf");
+    font-display: swap;
+}
+
+:root {
+    --space-xs: 8px;
+    --space-s: 16px;
+    --space-m: 32px;
+    --space-l: 64px;
+    --space-xl: 128px;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, Times;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+main {
+    display: grid;
+    justify-items: center;
+}
+
+h1 {
+    font-family: unelegant;
+    font-size: 48px;
+    margin: 0;
+}
+
+.section-title {
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-m);
+}
+
+.logo {
+    font-size: 48px;
+    font-family: coop;
+    width: 128px;
+    height: 128px;
+    border-radius: 128px;
+    background: blue;
+    background: radial-gradient(circle, #0000FF 55%, #0000FF47 65%, transparent 100%);
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-auto-flow: column;
+    transform: rotate(-12deg);
+    animation: logo-animation 12s linear infinite;
+}
+
+.monday {
+    top: 20px;
+    margin-left: 80px;
+    font-size: 24px;
+    z-index: 2;
+    position: absolute;
+    font-family: unelegant;
+    transform: rotate(-12deg);
+    background-color: white;
+}
+
+.red {
+    color: orange;
+}
+
+.blue {
+    color: lightgreen;
+}
+
+
+code {
+    font-family: monospace;
+    color: darkorange;
+}
+
+
+.section, section {
+    margin-top: var(--space-xs);
+    white-space: pre-line;
+    margin-bottom: var(--space-m);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+}
+
+hr {
+    width: 100%;
+}
+
+details > summary {
+    list-style: none;
+}
+
+
+@keyframes logo-animation {
+    0% {
+        transform: rotate(-12deg);
+    }
+    100% {
+        transform: rotate(348deg);
+    }
+}
+
+
+
+@media (prefers-reduced-motion) {
+    .logo {
+        animation: none;
+    }
+}
+
+
+
+@media print {
+    @page {
+        size: A4;
+    }
+    body {
+        margin: 0;
+        width: 210mm;
+        height: 100%;
+    }
+    nav {
+        break-after: page;
+        display: grid;
+        height: 297mm;
+        align-content: center;
+        justify-content: center;
+    }
+    .logo {
+        font-size: 128px;
+        font-family: coop;
+        width: 256px;
+        height: 256px;
+        border-radius: 256px;
+        transform: rotate(-8deg);
+        animation: none !important;
+    }
+    .monday {
+        top: 28px;
+        margin-left: 128px;
+        font-size: 36px;
+        position: relative;
+    }
+    hr {
+        display: none;
+    }
+    details {
+        break-before: page;
+        width: 150mm;
+    }
+}
+

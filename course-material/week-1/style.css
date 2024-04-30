@@ -1,0 +1,37 @@
+@font-face {
+    font-family: Standard;
+    src: url("standard-book.otf");
+}
+
+
+
+
+body {
+    width: 118mm;
+    height: 210mm;
+    border: 1px solid green;
+    font-family: Standard;
+}
+
+
+.fact-1 {
+    color: blue; 
+    font-size: 128px;
+}
+
+
+
+
+
+@media print {
+    @page {
+        size: 118mm 210mm;
+        width: 118mm;
+        height: 210mm;
+        overflow: hidden;
+    }
+    body {
+        border: none; 
+        margin: 0;
+    }
+}

@@ -68,6 +68,10 @@ h1 {
     background-color: white;
 }
 
+img {
+    max-width: 100%;
+}
+
 .red {
     color: orange;
 }
@@ -99,8 +103,14 @@ hr {
     width: 100%;
 }
 
+
+/* Hide the marker */
 details > summary {
     list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display:none;
 }
 
 
@@ -160,6 +170,13 @@ details > summary {
     details {
         break-before: page;
         width: 150mm;
+    }
+
+    .section > img {
+        display: table;
+        break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+        break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+        break-inside: avoid !important; /* or 'auto' */
     }
 }
 

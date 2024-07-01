@@ -1,0 +1,53 @@
+@font-face {
+	font-family: Standard;
+	src: url("standard-book.otf");
+}
+
+
+body {
+	width: 594mm;
+	height: 841mm;
+	border: 1px solid red;
+	font-family: Standard;
+}
+
+
+.grid-four {
+	display: grid;
+	grid-template-areas: 
+		"tl tr"
+		"bl br";
+	height: 100%;
+}
+
+.top {
+	grid-row: 1;
+}
+
+.bottom {
+	grid-row: 2;
+}
+
+.left {
+	grid-column: 1;
+}
+
+.right {
+	grid-column: 2;
+}
+
+
+
+
+@media print {
+	@page {
+		size: 594mm 841mm;
+		width: 594mm;
+		height: 841mm;
+		overflow: hidden;
+	}
+	body {
+		border: none; 
+		margin: 0;
+	}
+}
